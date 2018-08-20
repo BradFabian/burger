@@ -9,6 +9,7 @@ if (process.env.JAWSDB_URL){
   port:  3600,
   user: "root",
   password: "Flyingslow88!",
+  socketPath: 'mysql-socket-path',
   database: "burgers_db"
   });
 };
