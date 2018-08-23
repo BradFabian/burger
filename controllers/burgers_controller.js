@@ -5,13 +5,14 @@ var burger = require('../models/burger');
 
 // <========= Create routes  =========>
 router.get('/', function (req, res) {
-    res.redirect('/index');
+    res.redirect('/');
 });
 
 // <========= Index page =========>
-router.get('/index', function (req, res) {
+router.get('/', function (req, res) {
     burger.selectAll(function(data) {
         var hbsObject = { burgers: data };
+        console.log(hbsObject);
         res.render('index', hbsObject);
     });
 });

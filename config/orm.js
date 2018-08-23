@@ -27,6 +27,7 @@ connection.query('INSERT INTO burgers SET ?', {
 
         connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], function (err, result) {
             if(err) throw err;
+            callback(result);
         });
     }
 };
