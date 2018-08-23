@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger');
 
-
 // <========= Create routes  =========>
-router.get('/', function (req, res) {
+/*router.get('/', function (req, res) {
     res.redirect('/');
-});
+});*/
+
 
 // <========= Index page =========>
 router.get('/', function (req, res) {
@@ -20,14 +20,16 @@ router.get('/', function (req, res) {
 // <========= Create new burger =========>
 router.post('/burger/create', function (req, res) {
     burger.insertOne(req.body.burger_name, function() {
-        res.redirect('/index');
-    });
+        res.json({ id: res.insertId });
+        console.log({ id: res.insertId });
+      });
+    
 });
 
 // <========= Devour a burger =========>
 router.post('/burger/eat/:id', function (req, res) {
     burger.updateOne(req.params.id, function() {
-        res.redirect('/index');
+        res.redirect('/');
     });
 });
 
