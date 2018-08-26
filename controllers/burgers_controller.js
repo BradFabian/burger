@@ -20,8 +20,7 @@ router.get('/', function (req, res) {
 // <========= Create new burger =========>
 router.post('/burger/create', function (req, res) {
     burger.insertOne(req.body.burger_name, function() {
-        res.json({ id: res.insertId });
-        console.log({ id: res.insertId });
+        res.redirect('/');
       });
     
 });
