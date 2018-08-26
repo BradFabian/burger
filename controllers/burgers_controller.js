@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger');
 
-// <========= Create routes  =========>
-/*router.get('/', function (req, res) {
+ //<========= Create routes  =========>
+router.get('/', function (req, res) {
     res.redirect('/');
-});*/
+});
 
 
 // <========= Index page =========>
